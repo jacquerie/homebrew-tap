@@ -16,5 +16,5 @@ $ brew trust jacquerie/tap
 
 Install with:
 ```console
-$ brew install jacquerie/tap/nativ
+$ brew install --cask jacquerie/tap/nativ
 ```
