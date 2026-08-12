@@ -20,8 +20,7 @@ cask "nativ" do
   zap trash: [
     "~/Library/Application Support/Nativ",
     "~/Library/Caches/Nativ",
-    "~/Library/HTTPStorages/io.github.blaizzy.nativ",
-    "~/Library/HTTPStorages/io.github.blaizzy.nativ.binarycookies",
+    "~/Library/Caches/io.github.blaizzy.nativ.plist",
     "~/Library/Preferences/io.github.blaizzy.nativ.plist",
   ]
 end
