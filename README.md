@@ -10,6 +10,20 @@ Then trust it with:
 $ brew trust jacquerie/tap
 ```
 
+## Formulae
+
+### DwarfStar
+
+Install with:
+```console
+$ brew install jacquerie/tap/dwarfstar
+```
+
+Run the DwarfStar server as a background service:
+```console
+$ brew services start jacquerie/tap/dwarfstar
+```
+
 ## Casks
 
 ### Nativ
