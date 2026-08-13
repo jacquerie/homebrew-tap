@@ -1,11 +1,11 @@
 # Homebrew Tap
 
-Add this tap with:
+Add this tap:
 ```console
 $ brew tap jacquerie/tap
 ```
 
-Then trust it with:
+Then trust it:
 ```console
 $ brew trust jacquerie/tap
 ```
@@ -14,9 +14,19 @@ $ brew trust jacquerie/tap
 
 ### DwarfStar
 
-Install with:
+Install:
 ```console
 $ brew install jacquerie/tap/dwarfstar
+```
+
+Discover the available models:
+```console
+$ ds4-download-model
+```
+
+Download the chosen model:
+```console
+$ ds4-download-model $CHOSEN_MODEL
 ```
 
 Run the DwarfStar server as a background service:
@@ -28,7 +38,7 @@ $ brew services start jacquerie/tap/dwarfstar
 
 ### Nativ
 
-Install with:
+Install:
 ```console
 $ brew install --cask jacquerie/tap/nativ
 ```
