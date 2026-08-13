@@ -1,6 +1,6 @@
 cask "nativ" do
-  version "0.3.0"
-  sha256 "5bd15ea7acd447d84dc2e727a32b57f3cda2046e61c49b2ab0c6088a24e3f0bb"
+  version "0.3.1"
+  sha256 "225002b9bca817b1acb8ccf3fc947923eb5c4768d6dbc6c35383c1c2f8d07843"
 
   url "https://github.com/Blaizzy/nativ/releases/download/v#{version}/Nativ-#{version}.dmg"
   name "Nativ"
