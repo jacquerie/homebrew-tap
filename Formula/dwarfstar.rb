@@ -50,16 +50,17 @@ class Dwarfstar < Formula
 
   def caveats
     <<~EOS
-      Only supports running ds4-server as a Homebrew service.
-
-      A GGUF model must be downloaded before serving any requests.
-
-      Download a model with the included helper, e.g. for a 96/128 GB Mac:
+      A GGUF model must be downloaded before serving any requests. Download
+      a model with the included helper, e.g. for a 96/128 GB Mac:
 
           #{bin}/ds4-download-model ds4f-q2
 
       Run `#{bin}/ds4-download-model` with no arguments to list all targets
       and their RAM requirements. Some targets need the Hugging Face CLI.
+
+      Ignore the annotation below: currently only supports running as a
+      Homebrew service because ds4-server looks for Metal kernels in a
+      path relative to its working directory.
     EOS
   end
 end
