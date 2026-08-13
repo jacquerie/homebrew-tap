@@ -10,13 +10,13 @@ class Dwarfstar < Formula
 
   def install
     system "make"
-    bin.install "ds4", "ds4-server", "ds4-bench", "ds4-eval", "ds4-agent"
+    bin.install "ds4-server"
     bin.install "download_model.sh" => "ds4-download-model"
 
     # ds4-server reads the Metal kernel sources at runtime, looking for
-    # metal/*.metal relative to its working directory (the paths are not
-    # embedded into the binary). Ship them in the Cellar so the service can
-    # find them; the service block below sets its working directory here.
+    # metal/*.metal relative to its working directory. Ship them in the
+    # Cellar so the service can find them; the service block below sets
+    # its working directory here.
     (share/"dwarfstar"/"metal").install Dir["metal/*.metal"]
 
     # By default the upstream downloader drops GGUF weights next to the script
@@ -50,9 +50,9 @@ class Dwarfstar < Formula
 
   def caveats
     <<~EOS
-      A GGUF model must be downloaded before ds4-server can serve any requests.
-      Models are large (tens to hundreds of GB) and depend on your hardware, so
-      this is left for you to do rather than run automatically at install time.
+      Only supports running ds4-server as a Homebrew service.
+
+      A GGUF model must be downloaded before serving any requests.
 
       Download a model with the included helper, e.g. for a 96/128 GB Mac:
 
@@ -60,37 +60,6 @@ class Dwarfstar < Formula
 
       Run `#{bin}/ds4-download-model` with no arguments to list all targets
       and their RAM requirements. Some targets need the Hugging Face CLI.
-
-      Downloaded models are installed in Homebrew's etc/dwarfstar directory:
-
-          #{etc/"dwarfstar"}/
-
-      A `ds4flash.gguf` symlink pointing at the latest downloaded model is
-      created there, and the background service (started with
-      `brew services start jacquerie/tap/dwarfstar`) loads it automatically:
-
-          #{etc/"dwarfstar"}/ds4flash.gguf
-
-      To serve a specific downloaded file manually, point the server at it:
-
-          #{opt_bin}/ds4-server -m /path/to/model.gguf
-
-      ds4-server reads its Metal kernel sources (metal/*.metal) at runtime
-      relative to the directory it is launched from. The background service
-      handles this automatically by running from:
-
-          #{share}/dwarfstar/
-
-      For manual runs, either cd into that directory first or set the
-      DS4_METAL_*_SOURCE environment variables (e.g.
-      DS4_METAL_FLASH_ATTN_SOURCE) to the installed .metal files:
-
-          #{share}/dwarfstar/metal/
-
-      The download directory can be overridden with the DS4_GGUF_DIR
-      environment variable.
-
-      See https://github.com/antirez/ds4 for full usage.
     EOS
   end
 end
