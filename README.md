@@ -36,6 +36,13 @@ $ brew services start jacquerie/tap/dwarfstar
 
 ## Casks
 
+### DS4 Control
+
+Install:
+```console
+$ brew install --cask jacquerie/tap/ds4-control
+```
+
 ### Nativ
 
 Install:
