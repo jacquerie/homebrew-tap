@@ -10,30 +10,6 @@ Then trust it:
 $ brew trust jacquerie/tap
 ```
 
-## Formulae
-
-### DwarfStar
-
-Install:
-```console
-$ brew install jacquerie/tap/dwarfstar
-```
-
-Discover the available models:
-```console
-$ ds4-download-model
-```
-
-Download the chosen model:
-```console
-$ ds4-download-model $CHOSEN_MODEL
-```
-
-Run the DwarfStar server as a background service:
-```console
-$ brew services start jacquerie/tap/dwarfstar
-```
-
 ## Casks
 
 ### DS4 Control
