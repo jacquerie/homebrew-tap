@@ -4,7 +4,7 @@ cask "ds4-control" do
 
   url "https://github.com/notatestuser/ds4-control/releases/download/v#{version}/DS4-Control-v#{version}.dmg"
   name "DS4 Control"
-  desc "A menu bar pane for DeepSeek V4 via DwarfStar"
+  desc "Menu bar pane for DeepSeek V4 via DwarfStar"
   homepage "https://github.com/notatestuser/ds4-control"
 
   livecheck do
