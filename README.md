@@ -9,12 +9,3 @@ Then trust it:
 ```console
 $ brew trust jacquerie/tap
 ```
-
-## Casks
-
-### Nativ
-
-Install:
-```console
-$ brew install --cask jacquerie/tap/nativ
-```
